@@ -1,6 +1,8 @@
 public class Einmaleins
 {
    public static void main (String args[]) {
+	   
+	  //hallo
       int     aussen,   innen;
       for (aussen=1 ; aussen<=10 ; aussen++)
          for (innen=1 ; innen<=10 ; innen++)
