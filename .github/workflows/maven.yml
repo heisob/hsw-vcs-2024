@@ -57,11 +57,11 @@ jobs:
         path: target/surefire-reports/*.xml
 
    # 6. Fehlerhafte Tests anzeigen
-    - name: Publish test results
-      uses: dorny/test-reporter@v1
-      with:
-        reporter: github
-        file: test-results.xml
+   # - name: Publish test results
+   #   uses: dorny/test-reporter@v1
+   #   with:
+   #     reporter: github
+   #     file: test-results.xml
 
    #    name: Unit Tests
    #    path: target/surefire-reports/*.xml
