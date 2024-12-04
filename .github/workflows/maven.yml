@@ -1,0 +1,38 @@
+name: Maven Build and Test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Repository auschecken
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # 2. Setze Java ein (z. B. Java 17)
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+
+    # 3. Maven-Abhängigkeiten cachen
+    - name: Cache Maven dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.m2/repository
+        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+        restore-keys: |
+          ${{ runner.os }}-maven-
+
+    # 4. Maven Build und Test ausführen
+    - name: Build and Test with Maven
+      run: mvn clean verify
