@@ -47,5 +47,5 @@ jobs:
     - name: Build and Test with Maven
       run: | 
         cd mavena1
-        mvn compile
-      #run: mvn clean verify
+        #mvn compile
+        run: mvn clean verify
