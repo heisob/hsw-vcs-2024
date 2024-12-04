@@ -49,3 +49,17 @@ jobs:
         cd mavena1
         mvn clean verify
         #mvn compile    
+   # 5. Testberichte als Artefakte hochladen
+    - name: Upload test results
+      uses: actions/upload-artifact@v3
+      with:
+        name: test-results
+        path: target/surefire-reports/*.xml
+
+   # 6. Fehlerhafte Tests anzeigen
+    - name: Publish test results
+      uses: dorny/test-reporter@v1
+      with:
+        name: Unit Tests
+        path: target/surefire-reports/*.xml
+        reporter: junit
