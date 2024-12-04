@@ -60,6 +60,14 @@ jobs:
     - name: Publish test results
       uses: dorny/test-reporter@v1
       with:
-        name: Unit Tests
-        path: target/surefire-reports/*.xml
-        reporter: junit
+        reporter: github
+        file: test-results.xml
+
+   #    name: Unit Tests
+   #    path: target/surefire-reports/*.xml
+   #    reporter: junit
+
+        
+
+
+        
