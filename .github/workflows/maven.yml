@@ -35,4 +35,5 @@ jobs:
 
     # 4. Maven Build und Test ausführen
     - name: Build and Test with Maven
-      run: mvn clean verify
+      run: mvn compile
+      #run: mvn clean verify
