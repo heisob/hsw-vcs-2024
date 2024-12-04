@@ -37,13 +37,15 @@ jobs:
     - name: Print current directory
       run: pwd
 
-    # 3. Dateien im aktuellen Verzeichnis auflisten
-    - name: List files
-      run: ls -la          
+    - name: Change directory and list files
+      run: |
+        cd mavena1
+        pwd
+        ls -la  
 
     # 2. Verzeichnis wechseln
-    - name: In das Projekt-Verzeichnis wechseln.
-      run: cd mavena1
+    #- name: In das Projekt-Verzeichnis wechseln.
+    #  run: cd mavena1
 
     # 3. Dateien im aktuellen Verzeichnis auflisten
     - name: List files
