@@ -41,6 +41,14 @@ jobs:
     - name: List files
       run: ls -la          
 
+    # 2. Verzeichnis wechseln
+    - name: In das Projekt-Verzeichnis wechseln.
+      run: cd mavena1
+
+    # 3. Dateien im aktuellen Verzeichnis auflisten
+    - name: List files
+      run: ls -la
+
     # 4. Maven Build und Test ausführen
     - name: Build and Test with Maven
       run: mvn compile
