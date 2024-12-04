@@ -33,6 +33,14 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-maven-
 
+    # 2. Aktuelles Verzeichnis ausgeben
+    - name: Print current directory
+      run: pwd
+
+    # 3. Dateien im aktuellen Verzeichnis auflisten
+    - name: List files
+      run: ls -la          
+
     # 4. Maven Build und Test ausführen
     - name: Build and Test with Maven
       run: mvn compile
